@@ -1,65 +1,21 @@
 //https://www.eclipse.org/paho/clients/js/
 
-function LED1_On() {
+function Historial_1() {
 	//alert("led on");
-	console.log("led1 on");
+	console.log("Historial 1");
 	//document.getElementById("sensor").innerHTML="led on";
-	message = new Paho.MQTT.Message("ON_led1");
+	message = new Paho.MQTT.Message("Historial 1");
     	message.destinationName = "luisrod-234@hotmail.com/test1";
     	client.send(message);
   
 }
-function LED1_Off(){	
+function Historial_2(){	
 	//alert("led off");
-	console.log("led1 off");
-	message = new Paho.MQTT.Message("OFF_led1");
+	console.log("Historial 2");
+	message = new Paho.MQTT.Message("historial2");
     	message.destinationName = "luisrod-234@hotmail.com/test1";
     	client.send(message);
 	//document.getElementById("sensor").innerHTML="led off";
-}
-
-function LED2_On() {
-	//alert("led on");
-	console.log("led2 on");
-	//document.getElementById("sensor").innerHTML="led on";
-	message = new Paho.MQTT.Message("ON_led__2");
-    	message.destinationName = "luisrod-234@hotmail.com/test1";
-    	client.send(message);
-  
-}
-function LED2_Off(){	
-	//alert("led off");
-	console.log("led2 off");
-	message = new Paho.MQTT.Message("OFF_led__2");
-    	message.destinationName = "luisrod-234@hotmail.com/test1";
-    	client.send(message);
-	//document.getElementById("sensor").innerHTML="led off";
-}
-
-function contrasena(){	
-	//alert("led off");
-	var pwd = document.getElementById('pw').value;
-	console.log('Contraseña');
-	if(pwd=="12345a"){
-	console.log("Contraseña Correcta");
-	alert("Constraseña Correcta");
-	pw.focus();
-	message = new Paho.MQTT.Message("Contrasena Correcta");
-    	message.destinationName = "luisrod-234@hotmail.com/test1";
-    	client.send(message);
-	//document.getElementById("sensor").innerHTML="led off";
-	}else if(pwd=="12345b"){
-	console.log("Contraseña Correcta");
-	alert("Constraseña Correcta");
-	pw.focus();
-	message = new Paho.MQTT.Message("Contrasena Correcta1");
-    	message.destinationName = "luisrod-234@hotmail.com/test1";
-    	client.send(message);
-	}else{
-	console.log("Contraseña Incorrecta");
-	alert("Constraseña Incorrecta");
-	pw.focus();
-	}
 }
 
 // Create a client instance
@@ -112,10 +68,8 @@ function contrasena(){
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
 	  y=message.payloadString;
-	  if(y=="hola, el LED1 se encuentra encendido"){
-	  document.getElementById("led1").innerHTML="ON";
-	  document.getElementById("historial").innerHTML="";
-	  document.getElementById("pw").value="";	  
+	  if(y=="El sensor 1 se encuentra encendido"){
+	  document.getElementById("historial").innerHTML=y;	  
 	  } else if(y=="hola, el LED1 se encuentra apagado"){
 	  document.getElementById("led1").innerHTML="OFF";
 	  document.getElementById("historial").innerHTML="";
