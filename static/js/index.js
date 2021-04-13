@@ -68,24 +68,7 @@ function Historial_2(){
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
 	  y=message.payloadString;
-	  if(y=="El sensor 1 se encuentra encendido"){
 	  document.getElementById("historial").innerHTML=y;	  
-	  } else if(y=="hola, el LED1 se encuentra apagado"){
-	  document.getElementById("led1").innerHTML="OFF";
-	  document.getElementById("historial").innerHTML="";
-	  document.getElementById("pw").value="";  
-	  } else if(y=="hola, el LED2 se encuentra encendido"){
-	  document.getElementById("led2").innerHTML="ON";
-	  document.getElementById("historial").innerHTML="";
-	  document.getElementById("pw").value="";	  
-	  }else if(y=="hola, el LED2 se encuentra apagado"){
-	  document.getElementById("led2").innerHTML="OFF";
-	  document.getElementById("historial").innerHTML="";
-	  document.getElementById("pw").value="";	  
-	  }else{
-	  document.getElementById("historial").innerHTML=y;
-	  document.getElementById("pw").value="";	  
-	  }
-	  
+	 
   }
   
