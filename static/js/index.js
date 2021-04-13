@@ -68,7 +68,8 @@ function Historial_2(){
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
 	  y=message.payloadString;
-	  document.getElementById("historial").innerHTML=y;	  
+	  document.getElementById("historial").innerHTML=y;	
+	 
 	 
   }
   
